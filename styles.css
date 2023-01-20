@@ -20,9 +20,9 @@ body {
     width: 500px;
     align-items: center;
 }
-#container {
-    width: 500px;
-    height: 500px;
+.div-container {
+    width: 600px;
+    height: 600px;
     display: grid;
     border: 1px solid black;
 }
