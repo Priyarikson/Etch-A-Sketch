@@ -1,4 +1,4 @@
-
+let color = "black";
 
 document.addEventListener('DOMContentLoaded',()=>{
     
@@ -6,35 +6,14 @@ document.addEventListener('DOMContentLoaded',()=>{
     select0.addEventListener("click",()=>{
         let size2 = getSize();
         console.log(size2);
-        
-    
-
-    const button1 = document.getElementById('button1');
-    button1.addEventListener('click', ()=>{
-        console.log("clicked");
-        createDiv(size2,"black");
-    
-});
-    const button2 = document.getElementById('button2');
-    button2.addEventListener('click', ()=>{
-        console.log("clicked");
-        createDiv(size2,"random");
-    
-});
-    const button3 = document.getElementById('button3');
-    button3.addEventListener('click', ()=>{
-        
-        console.log("clicked");
-});
-
-  
+        createDiv(size2);  
     
 });
 });
 
 
 
-function createDiv(size,color){
+function createDiv(size){
     let container1 = document.querySelector(".container12");
     container1.style.gridTemplateColumns = `repeat(${size},1fr)`;
     container1.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -43,15 +22,7 @@ function createDiv(size,color){
 
     for(let i = 0; i < numDivs; i++){
         let div1 = document.createElement("div");
-        div1.addEventListener("mouseover",()=>{
-            
-            if(color === "random"){
-                div1.style.backgroundColor = randomColor();
-            }
-            else{
-                div1.style.backgroundColor = "black";
-            }
-        });
+        div1.addEventListener("mouseover",colorDiv);
         container1.insertAdjacentElement("beforeend", div1);
     };
     
@@ -83,7 +54,17 @@ function getSize(){
 	return `hsl(${ h }, ${ s }%, ${ l }%)`
   
 }
-
+function colorDiv(){
+    if(color === "random"){
+        this.style.backgroundColor = randomColor();
+    }
+    else{
+        this.style.backgroundColor = "black";
+    }
+}
+function setColor(colorChoice){
+    color = colorChoice;
+}
 
     
 
