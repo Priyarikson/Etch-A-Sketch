@@ -1,7 +1,17 @@
 let color = "black";
-
+let click = false;
 document.addEventListener('DOMContentLoaded',()=>{
-    
+    createDiv(16); 
+
+    document.querySelector('body').addEventListener("click", (e)=>{
+        if(e.target.tagName != "BUTTON"){
+            click = !click;
+
+        }
+    });
+
+
+
     let select0 = document.getElementById("pop-up");
     select0.addEventListener("click",()=>{
         let size2 = getSize();
@@ -55,18 +65,24 @@ function getSize(){
   
 }
 function colorDiv(){
-    if(color === "random"){
-        this.style.backgroundColor = randomColor();
+    if(click){
+        if(color === "random"){
+            this.style.backgroundColor = randomColor();
+        }
+        else{
+            this.style.backgroundColor = "black";
+        }
     }
-    else{
-        this.style.backgroundColor = "black";
-    }
+    
 }
 function setColor(colorChoice){
     color = colorChoice;
 }
 
-    
+function reset(){
+    let divs = document.querySelectorAll("div");
+    divs.forEach((div)=> div.style.backgroundColor = "white")
+}
 
 
 
