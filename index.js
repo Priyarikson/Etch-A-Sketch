@@ -31,7 +31,7 @@ function getSize(){
         message.innerHTML = "provide a number between 1 and 100";
     }
     else{
-        message.innerHTML = "now you play";
+        message.innerHTML = "Play!Click on the board to START and STOP";
         return input0;
     }
 };
