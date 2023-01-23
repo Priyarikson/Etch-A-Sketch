@@ -106,6 +106,8 @@ document.addEventListener('DOMContentLoaded',()=>{
         button3.addEventListener('click',function reset(){
     let divs = document.querySelectorAll("div");
     divs.forEach((div)=> div.style.backgroundColor = "white")
+
+    //there is a bug in rest button all divs including header and footer are changing colors.
 })
 });
 });
